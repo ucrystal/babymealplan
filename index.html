@@ -7,272 +7,67 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.10.0/dist/tabler-icons.min.css" />
   <style>
     :root {
-      --green-50: #EAF3DE;
-      --green-100: #C0DD97;
-      --green-600: #3B6D11;
-      --green-700: #27500A;
-      --blue-50: #E6F1FB;
-      --blue-600: #185FA5;
-      --amber-50: #FAEEDA;
-      --amber-600: #854F0B;
-      --radius-md: 8px;
-      --radius-lg: 12px;
+      --green-50: #EAF3DE; --green-100: #C0DD97; --green-600: #3B6D11; --green-700: #27500A;
+      --blue-50: #E6F1FB; --blue-600: #185FA5;
+      --amber-50: #FAEEDA; --amber-600: #854F0B;
+      --red-600: #A32D2D; --red-700: #791F1F;
+      --radius-md: 8px; --radius-lg: 12px;
       --shadow: 0 1px 4px rgba(0,0,0,0.07);
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans KR', sans-serif;
-      background: #f5f5f0;
-      color: #1a1a1a;
-      min-height: 100vh;
-      padding: 2rem 1rem;
-    }
-
-    .wrap {
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    header h1 {
-      font-size: 24px;
-      font-weight: 600;
-      color: #1a1a1a;
-      margin-bottom: 6px;
-    }
-    header p {
-      font-size: 14px;
-      color: #666;
-    }
-
-    .action-bar {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 1.25rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 16px;
-      font-size: 14px;
-      border-radius: var(--radius-md);
-      border: 1px solid #d0d0c8;
-      background: #fff;
-      color: #333;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans KR', sans-serif; background: #f5f5f0; color: #1a1a1a; min-height: 100vh; padding: 2rem 1rem; }
+    .wrap { max-width: 680px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 2rem; }
+    header h1 { font-size: 24px; font-weight: 600; margin-bottom: 6px; }
+    header p { font-size: 14px; color: #666; }
+    .action-bar { display: flex; gap: 8px; margin-bottom: 1.25rem; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; font-size: 14px; border-radius: var(--radius-md); border: 1px solid #d0d0c8; background: #fff; color: #333; cursor: pointer; transition: background 0.15s; font-family: inherit; }
     .btn:hover { background: #f0f0eb; }
-    .btn.primary {
-      background: var(--green-600);
-      color: #fff;
-      border-color: var(--green-600);
-    }
+    .btn.primary { background: var(--green-600); color: #fff; border-color: var(--green-600); }
     .btn.primary:hover { background: var(--green-700); }
-
-    .day-card {
-      background: #fff;
-      border: 1px solid #e8e8e2;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      margin-bottom: 10px;
-      box-shadow: var(--shadow);
-    }
-
-    .day-label {
-      background: var(--green-50);
-      color: var(--green-600);
-      font-size: 13px;
-      font-weight: 600;
-      padding: 6px 14px;
-      border-bottom: 1px solid var(--green-100);
-    }
-
-    .meals-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .meal-block {
-      padding: 12px 14px;
-    }
-    .meal-block:first-child {
-      border-right: 1px solid #ebebeb;
-    }
-
-    .meal-time {
-      font-size: 12px;
-      color: #999;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .meal-name {
-      font-size: 15px;
-      font-weight: 600;
-      color: #1a1a1a;
-      margin-bottom: 3px;
-    }
-
-    .meal-desc {
-      font-size: 12px;
-      color: #888;
-      line-height: 1.5;
-      margin-bottom: 10px;
-      min-height: 36px;
-    }
-
-    .dinner-items {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 10px;
-    }
-
-    .dinner-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 7px;
-    }
-
-    .dinner-tag {
-      font-size: 11px;
-      padding: 2px 8px;
-      border-radius: 10px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      margin-top: 1px;
-      font-weight: 500;
-    }
+    .btn.danger { background: var(--red-600); color: #fff; border-color: var(--red-600); }
+    .btn.danger:hover { background: var(--red-700); }
+    .day-card { background: #fff; border: 1px solid #e8e8e2; border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 10px; box-shadow: var(--shadow); }
+    .day-label { background: var(--green-50); color: var(--green-600); font-size: 13px; font-weight: 600; padding: 6px 14px; border-bottom: 1px solid var(--green-100); }
+    .meals-row { display: grid; grid-template-columns: 1fr 1fr; }
+    .meal-block { padding: 12px 14px; }
+    .meal-block:first-child { border-right: 1px solid #ebebeb; }
+    .meal-time { font-size: 12px; color: #999; margin-bottom: 8px; display: flex; align-items: center; gap: 4px; }
+    .meal-name { font-size: 15px; font-weight: 600; margin-bottom: 3px; }
+    .meal-desc { font-size: 12px; color: #888; line-height: 1.5; margin-bottom: 10px; min-height: 36px; }
+    .dinner-items { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; }
+    .dinner-item { display: flex; align-items: flex-start; gap: 7px; }
+    .dinner-tag { font-size: 11px; padding: 2px 8px; border-radius: 10px; white-space: nowrap; flex-shrink: 0; margin-top: 1px; font-weight: 500; }
     .tag-rice { background: var(--green-50); color: var(--green-600); }
     .tag-soup { background: var(--blue-50); color: var(--blue-600); }
     .tag-side { background: var(--amber-50); color: var(--amber-600); }
-
-    .dinner-text {
-      font-size: 13px;
-      color: #1a1a1a;
-      line-height: 1.5;
-    }
-
-    .meal-actions {
-      display: flex;
-      gap: 5px;
-      flex-wrap: wrap;
-    }
-
-    .btn-sm {
-      font-size: 12px;
-      padding: 3px 9px;
-      border: 1px solid #d8d8d0;
-      border-radius: var(--radius-md);
-      background: transparent;
-      color: #666;
-      cursor: pointer;
-    }
+    .dinner-text { font-size: 13px; line-height: 1.5; }
+    .meal-actions { display: flex; gap: 5px; flex-wrap: wrap; }
+    .btn-sm { font-size: 12px; padding: 3px 9px; border: 1px solid #d8d8d0; border-radius: var(--radius-md); background: transparent; color: #666; cursor: pointer; font-family: inherit; }
     .btn-sm:hover { background: #f5f5f0; }
-
-    .library {
-      background: #fff;
-      border: 1px solid #e8e8e2;
-      border-radius: var(--radius-lg);
-      padding: 1.25rem;
-      margin-bottom: 1.25rem;
-      box-shadow: var(--shadow);
-    }
-
-    .library-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 14px;
-    }
-    .library-header span { font-size: 15px; font-weight: 600; }
-
-    .cat-label {
-      font-size: 11px;
-      font-weight: 600;
-      color: #999;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-      margin-top: 12px;
-    }
-    .cat-label:first-child { margin-top: 0; }
-
+    .library { background: #fff; border: 1px solid #e8e8e2; border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.25rem; box-shadow: var(--shadow); }
+    .lib-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+    .lib-header span { font-size: 15px; font-weight: 600; }
+    .lib-hint { font-size: 12px; color: #999; font-weight: 400; }
+    .cat-section { margin-bottom: 16px; }
+    .cat-title { font-size: 11px; font-weight: 600; color: #999; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 8px; }
     .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-    .chip {
-      font-size: 13px;
-      padding: 4px 12px;
-      border-radius: 20px;
-      border: 1px solid #d8d8d0;
-      background: #fafaf8;
-      cursor: pointer;
-      color: #333;
-    }
-    .chip:hover { border-color: var(--green-600); color: var(--green-600); }
-
-    /* Modal */
-    .overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.35);
-      z-index: 100;
-      align-items: center;
-      justify-content: center;
-    }
+    .chip { font-size: 13px; padding: 4px 8px 4px 12px; border-radius: 20px; border: 1px solid #d8d8d0; background: #fafaf8; color: #333; display: inline-flex; align-items: center; gap: 5px; }
+    .chip-del { background: none; border: none; cursor: pointer; color: #aaa; font-size: 14px; line-height: 1; padding: 0; display: flex; align-items: center; }
+    .chip-del:hover { color: var(--red-600); }
+    .empty-msg { font-size: 13px; color: #aaa; font-style: italic; }
+    .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 100; align-items: center; justify-content: center; }
     .overlay.open { display: flex; }
-
-    .modal {
-      background: #fff;
-      border-radius: var(--radius-lg);
-      padding: 1.5rem;
-      width: 340px;
-      max-width: 92vw;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-    }
+    .modal { background: #fff; border-radius: var(--radius-lg); padding: 1.5rem; width: 340px; max-width: 92vw; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
     .modal h3 { font-size: 16px; font-weight: 600; margin-bottom: 14px; }
-
-    .modal label {
-      font-size: 13px;
-      color: #666;
-      display: block;
-      margin-bottom: 4px;
-      margin-top: 12px;
-    }
-    .modal label:first-of-type { margin-top: 0; }
-
-    .modal input,
-    .modal select,
-    .modal textarea {
-      width: 100%;
-      font-size: 14px;
-      padding: 8px 10px;
-      border: 1px solid #d0d0c8;
-      border-radius: var(--radius-md);
-      background: #fff;
-      color: #1a1a1a;
-      font-family: inherit;
-    }
+    .modal label { font-size: 13px; color: #666; display: block; margin-bottom: 4px; margin-top: 12px; }
+    .modal input, .modal select, .modal textarea { width: 100%; font-size: 14px; padding: 8px 10px; border: 1px solid #d0d0c8; border-radius: var(--radius-md); background: #fff; color: #1a1a1a; font-family: inherit; }
     .modal textarea { resize: vertical; min-height: 56px; }
-
-    .modal-actions {
-      display: flex;
-      gap: 8px;
-      margin-top: 16px;
-      justify-content: flex-end;
-    }
-
+    .modal-actions { display: flex; gap: 8px; margin-top: 16px; justify-content: flex-end; }
+    .confirm-box { background: #fff; border-radius: var(--radius-lg); padding: 1.5rem; width: 300px; max-width: 92vw; box-shadow: 0 8px 32px rgba(0,0,0,0.15); text-align: center; }
+    .confirm-box p { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .confirm-box small { font-size: 13px; color: #888; }
+    .confirm-actions { display: flex; gap: 8px; margin-top: 16px; justify-content: center; }
     @media (max-width: 500px) {
       .meals-row { grid-template-columns: 1fr; }
       .meal-block:first-child { border-right: none; border-bottom: 1px solid #ebebeb; }
@@ -285,21 +80,29 @@
     <h1>🍼 유아식 식단 플래너</h1>
     <p>15개월 아기를 위한 맞춤 식단</p>
   </header>
-
   <div class="action-bar">
     <button class="btn primary" onclick="shuffleAll()"><i class="ti ti-refresh"></i> 전체 랜덤 변경</button>
     <button class="btn" onclick="showAddModal()"><i class="ti ti-plus"></i> 메뉴 추가</button>
     <button class="btn" onclick="toggleLibrary()"><i class="ti ti-book"></i> 메뉴 목록</button>
   </div>
-
   <div id="dayGrid"></div>
-
   <div class="library" id="menuLibrary" style="display:none;">
-    <div class="library-header">
-      <span>전체 메뉴 목록</span>
+    <div class="lib-header">
+      <span>전체 메뉴 목록 <span class="lib-hint">— X 버튼으로 삭제</span></span>
       <button class="btn-sm" onclick="toggleLibrary()">닫기</button>
     </div>
     <div id="libraryContent"></div>
+  </div>
+</div>
+
+<div class="overlay" id="confirmOverlay" onclick="closeConfirm()">
+  <div class="confirm-box" onclick="event.stopPropagation()">
+    <p id="confirmMsg"></p>
+    <small id="confirmSub"></small>
+    <div class="confirm-actions">
+      <button class="btn" onclick="closeConfirm()">취소</button>
+      <button class="btn danger" onclick="doDelete()"><i class="ti ti-trash"></i> 삭제</button>
+    </div>
   </div>
 </div>
 
@@ -326,6 +129,7 @@
 
 <script>
 const DAYS = ['월','화','수','목','금','토','일'];
+const catLabels = { 아침: '아침 (한그릇)', 밥: '저녁 - 밥', 국: '저녁 - 국·찌개', 반찬: '저녁 - 반찬' };
 
 const menuDB = {
   아침: [
@@ -340,12 +144,8 @@ const menuDB = {
     { name: '연두부 나물밥', desc: '연두부와 나물을 섞은 부드러운 밥' },
   ],
   밥: [
-    { name: '진밥', desc: '' },
-    { name: '소고기 진밥', desc: '' },
-    { name: '채소 진밥', desc: '' },
-    { name: '두부 비빔밥', desc: '' },
-    { name: '달걀 덮밥', desc: '' },
-    { name: '닭고기 진밥', desc: '' },
+    { name: '진밥', desc: '' }, { name: '소고기 진밥', desc: '' }, { name: '채소 진밥', desc: '' },
+    { name: '두부 비빔밥', desc: '' }, { name: '달걀 덮밥', desc: '' }, { name: '닭고기 진밥', desc: '' },
   ],
   국: [
     { name: '감자 된장국', desc: '부드러운 감자 넣은 순한 된장국' },
@@ -371,28 +171,19 @@ const menuDB = {
 };
 
 const rand = arr => arr[Math.floor(Math.random() * arr.length)];
-let plan = [];
-let editTarget = null;
-let addMode = false;
+let plan = [], editTarget = null, addMode = false, deleteTarget = null;
 
 function newDinner() {
-  return {
-    rice: rand(menuDB['밥']),
-    soup: rand(menuDB['국']),
-    side: rand(menuDB['반찬']),
-  };
+  return { rice: rand(menuDB['밥']), soup: rand(menuDB['국']), side: rand(menuDB['반찬']) };
 }
-
 function initPlan() {
   plan = DAYS.map(day => ({ day, breakfast: rand(menuDB['아침']), dinner: newDinner() }));
   renderPlan();
 }
-
 function shuffleAll() {
   plan.forEach(d => { d.breakfast = rand(menuDB['아침']); d.dinner = newDinner(); });
   renderPlan();
 }
-
 function renderPlan() {
   document.getElementById('dayGrid').innerHTML = plan.map((d, i) => `
     <div class="day-card">
@@ -425,7 +216,6 @@ function renderPlan() {
     </div>
   `).join('');
 }
-
 function shuffleBreakfast(i) { plan[i].breakfast = rand(menuDB['아침']); renderPlan(); }
 function shuffleDinner(i) { plan[i].dinner = newDinner(); renderPlan(); }
 function shufflePart(i, part) {
@@ -433,29 +223,23 @@ function shufflePart(i, part) {
   plan[i].dinner[part] = rand(menuDB[map[part]]);
   renderPlan();
 }
-
 function editBreakfast(i) {
-  addMode = false;
-  editTarget = { i };
+  addMode = false; editTarget = { i };
   document.getElementById('modalTitle').textContent = `${plan[i].day}요일 아침 메뉴 변경`;
   document.getElementById('menuCategoryInput').value = '아침';
   document.getElementById('menuNameInput').value = plan[i].breakfast.name;
   document.getElementById('menuDescInput').value = plan[i].breakfast.desc || '';
   document.getElementById('modal').classList.add('open');
 }
-
 function showAddModal() {
-  addMode = true;
-  editTarget = null;
+  addMode = true; editTarget = null;
   document.getElementById('modalTitle').textContent = '새 메뉴 추가';
   document.getElementById('menuNameInput').value = '';
   document.getElementById('menuDescInput').value = '';
   document.getElementById('menuCategoryInput').value = '아침';
   document.getElementById('modal').classList.add('open');
 }
-
 function closeModal() { document.getElementById('modal').classList.remove('open'); }
-
 function saveModal() {
   const name = document.getElementById('menuNameInput').value.trim();
   const desc = document.getElementById('menuDescInput').value.trim();
@@ -465,21 +249,45 @@ function saveModal() {
   if (addMode) { menuDB[cat].push(menu); renderLibrary(); closeModal(); return; }
   if (editTarget != null) { plan[editTarget.i].breakfast = menu; renderPlan(); closeModal(); }
 }
-
+function confirmDelete(cat, idx) {
+  const item = menuDB[cat][idx];
+  deleteTarget = { cat, idx };
+  document.getElementById('confirmMsg').textContent = `"${item.name}"을(를) 삭제할까요?`;
+  document.getElementById('confirmSub').textContent = `${catLabels[cat]} 목록에서 제거됩니다.`;
+  document.getElementById('confirmOverlay').classList.add('open');
+}
+function closeConfirm() {
+  deleteTarget = null;
+  document.getElementById('confirmOverlay').classList.remove('open');
+}
+function doDelete() {
+  if (!deleteTarget) return;
+  menuDB[deleteTarget.cat].splice(deleteTarget.idx, 1);
+  closeConfirm();
+  renderLibrary();
+}
 function toggleLibrary() {
   const lib = document.getElementById('menuLibrary');
   if (lib.style.display === 'none') { renderLibrary(); lib.style.display = 'block'; }
   else lib.style.display = 'none';
 }
-
 function renderLibrary() {
-  const labels = { 아침: '아침 (한그릇)', 밥: '저녁 - 밥', 국: '저녁 - 국·찌개', 반찬: '저녁 - 반찬' };
   document.getElementById('libraryContent').innerHTML = Object.entries(menuDB).map(([cat, items]) => `
-    <div class="cat-label">${labels[cat]}</div>
-    <div class="chips">${items.map(m => `<span class="chip">${m.name}</span>`).join('')}</div>
+    <div class="cat-section">
+      <div class="cat-title">${catLabels[cat]}</div>
+      <div class="chips">
+        ${items.length === 0
+          ? '<span class="empty-msg">메뉴가 없습니다</span>'
+          : items.map((m, i) => `
+            <span class="chip">${m.name}
+              <button class="chip-del" onclick="confirmDelete('${cat}',${i})" aria-label="${m.name} 삭제">
+                <i class="ti ti-x" style="font-size:12px"></i>
+              </button>
+            </span>`).join('')}
+      </div>
+    </div>
   `).join('');
 }
-
 initPlan();
 </script>
 </body>
